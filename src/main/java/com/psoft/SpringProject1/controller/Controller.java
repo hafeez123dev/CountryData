@@ -75,7 +75,17 @@ public class Controller {
     
     @GetMapping("/countries")
     public  List<Country> getCountries() {
-        return studentService.getAllCountries(); // Fetch and store countries
+        return studentService.getAllCountries();
+        // Fetch and store countries
+    }
+    @GetMapping("/public")
+    public String publicEndpoint() {
+        return "This is a public endpoint.";
+    }
+
+    @GetMapping("/private")
+    public String privateEndpoint() {
+        return "This is a secured endpoint. You must be authenticated.";
     }
 }
 
